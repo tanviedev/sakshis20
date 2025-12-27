@@ -11,8 +11,8 @@ interface Letter {
 }
 
 const letters: Letter[] = [
-  { id: 1, title: "For Your Laughter", preview: "The way you light up every room...", content: "Your laughter is infectious, your smile is radiant, and your presence makes everything better. Never stop being the sunshine you are." },
-  { id: 2, title: "For Your Strength", preview: "You've always been the strongest...", content: "Through every challenge, you've shown grace and resilience. Your strength inspires everyone around you to be better." },
+  { id: 1, title: "For Your Laughter", preview: "The way you light up every room...", content: "INFECTIOUS laughter, like OMG!! never stop being the Sunshine you are<3" },
+  { id: 2, title: "For Your Strength", preview: "You've always been the strongest...", content: "You've always been relentlessly resilient, especially the past few years have made you none less than a superwoman, stay strong kiddo, there for you alwaysss<3" },
   { id: 3, title: "For Your Dreams", preview: "Keep chasing the impossible...", content: "Your dreams are valid, beautiful, and within reach. Never let anyone dim your light or tell you what you can't achieve." },
   { id: 4, title: "For Your Heart", preview: "Your kindness knows no bounds...", content: "You have the most generous heart I've ever known. Your compassion and empathy make this world a better place." },
   { id: 5, title: "For Your Style", preview: "Effortlessly elegant, always...", content: "Your sense of style isn't just about clothes—it's the way you carry yourself with such grace and confidence." },
@@ -30,46 +30,54 @@ const letters: Letter[] = [
   { id: 17, title: "For Your Past", preview: "Every moment shaped you...", content: "Every experience has made you who you are today. Your journey is beautiful, and it's only beginning." },
   { id: 18, title: "For Your Present", preview: "This moment, right now...", content: "Be present. Enjoy this moment. You're exactly where you need to be, and you're absolutely perfect." },
   { id: 19, title: "For Your Love", preview: "The love you give...", content: "The way you love—fully, deeply, genuinely—is a gift. Everyone you love is incredibly lucky." },
-  { id: 20, title: "For Your Legacy", preview: "A queen turns 20...", content: "Welcome to your 20s, my forever princess. This decade will define your legacy. Make it magical. Make it yours. Make it legendary. I'll be cheering you on every step of the way. Here's to the woman you are and the icon you're becoming. Happy 20th Birthday. 👑💗", isSpecial: true },
+  { id: 20, title: "For Your Legacy", preview: "A queen turns 20...", content: "Welcome to your 20s, my forever princess. This decade will define your legacy. Make it magical. Make it yours. Make it legendary. I'll be cheering you on every step of the way. Happy 20th Birthday. 👑💗", isSpecial: true },
 ];
 
 export function LettersSection() {
   const [selectedLetter, setSelectedLetter] = useState<Letter | null>(null);
 
   return (
-    <section className="py-20 md:py-32 px-6" id="letters">
-      {/* Section Header */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-center mb-16 md:mb-24"
-      >
-        <div className="flex items-center justify-center gap-4 mb-6">
-          <div className="w-12 h-[1px] bg-[#D4A5A5]" />
-          <span className="text-2xl text-[#D4A5A5]">✦</span>
-          <div className="w-12 h-[1px] bg-[#D4A5A5]" />
-        </div>
-        
-        <h2 
-          className="text-4xl md:text-6xl text-[#2C2C2C] mb-4"
-          style={{ fontFamily: 'Playfair Display, serif' }}
-        >
-          20 Letters for 20 Years
-        </h2>
-        
-        <p
-          className="text-lg md:text-xl text-[#8B6F6F] max-w-2xl mx-auto"
-          style={{ fontFamily: 'Cormorant Garamond, serif' }}
-        >
-          Each letter, a memory. Each word, from the heart.
-        </p>
-      </motion.div>
+    <section
+      id="letters"
+      className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('images/bg1.jpg')" }}
+    >
+      {/* Soft Overlay */}
+      <div className="absolute inset-0 bg-[#FFF6F4]/80 backdrop-blur-[2px]" />
 
-      {/* Letters Grid */}
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      {/* Content */}
+      <div className="relative z-10 py-20 md:py-32 px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-24"
+        >
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-[1px] bg-[#D4A5A5]" />
+            <span className="text-2xl text-[#D4A5A5]">✦</span>
+            <div className="w-12 h-[1px] bg-[#D4A5A5]" />
+          </div>
+
+          <h2
+            className="text-4xl md:text-6xl text-[#2C2C2C] mb-4"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            20 Letters for 20 Years
+          </h2>
+
+          <p
+            className="text-lg md:text-xl text-[#8B6F6F] max-w-2xl mx-auto"
+            style={{ fontFamily: 'Cormorant Garamond, serif' }}
+          >
+            No number of letters could ever capture my endless yap sessions — but here are 20, just for now.
+          </p>
+        </motion.div>
+
+        {/* Grid */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {letters.map((letter, index) => (
             <motion.button
               key={letter.id}
@@ -79,181 +87,61 @@ export function LettersSection() {
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
               onClick={() => setSelectedLetter(letter)}
-              className={`
-                relative p-6 md:p-8 rounded-lg text-left
-                transition-all duration-300 cursor-pointer
-                group overflow-hidden
-                ${letter.isSpecial 
-                  ? 'bg-gradient-to-br from-[#F4DDD4] to-[#E8C4C4] shadow-lg' 
-                  : 'bg-white shadow-md hover:shadow-xl'
-                }
+              className={`relative p-6 md:p-8 rounded-xl text-left group transition-all
+                ${letter.isSpecial
+                  ? 'bg-gradient-to-br from-[#F4DDD4] to-[#E8C4C4] shadow-xl'
+                  : 'bg-white/90 backdrop-blur shadow-md hover:shadow-xl'}
               `}
             >
-              {/* Letter Number */}
-              <div className="absolute top-4 right-4">
-                <span
-                  className={`
-                    text-6xl md:text-7xl opacity-10 group-hover:opacity-20 transition-opacity
-                    ${letter.isSpecial ? 'text-white' : 'text-[#D4A5A5]'}
-                  `}
-                  style={{ fontFamily: 'Playfair Display, serif' }}
-                >
-                  {letter.id}
-                </span>
-              </div>
+              <span
+                className="absolute top-4 right-4 text-6xl opacity-10"
+                style={{ fontFamily: 'Playfair Display, serif' }}
+              >
+                {letter.id}
+              </span>
 
-              {/* Special Badge */}
               {letter.isSpecial && (
-                <div className="absolute top-4 left-4">
-                  <span className="text-xl">👑</span>
-                </div>
+                <span className="absolute top-4 left-4 text-xl">👑</span>
               )}
 
-              {/* Content */}
-              <div className="relative z-10">
-                <h3
-                  className={`
-                    text-xl md:text-2xl mb-3 group-hover:text-[#8B6F6F] transition-colors
-                    ${letter.isSpecial ? 'text-[#6B5B5B]' : 'text-[#2C2C2C]'}
-                  `}
-                  style={{ fontFamily: 'Playfair Display, serif' }}
-                >
-                  {letter.title}
-                </h3>
-                
-                <p
-                  className={`
-                    text-sm md:text-base leading-relaxed
-                    ${letter.isSpecial ? 'text-[#8B6F6F]' : 'text-[#A99A9A]'}
-                  `}
-                  style={{ fontFamily: 'Cormorant Garamond, serif' }}
-                >
-                  {letter.preview}
-                </p>
-              </div>
+              <h3
+                className="text-xl md:text-2xl mb-3 text-[#2C2C2C]"
+                style={{ fontFamily: 'Playfair Display, serif' }}
+              >
+                {letter.title}
+              </h3>
 
-              {/* Hover Effect Border */}
-              <div 
-                className={`
-                  absolute inset-0 border-2 rounded-lg opacity-0 
-                  group-hover:opacity-100 transition-opacity
-                  ${letter.isSpecial ? 'border-white/50' : 'border-[#D4A5A5]/50'}
-                `}
-              />
+              <p
+                className="text-sm md:text-base text-[#8B6F6F]"
+                style={{ fontFamily: 'Cormorant Garamond, serif' }}
+              >
+                {letter.preview}
+              </p>
             </motion.button>
           ))}
         </div>
       </div>
 
-      {/* Letter Modal */}
+      {/* Modal (unchanged logic, already aesthetic-perfect) */}
       <AnimatePresence>
         {selectedLetter && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             onClick={() => setSelectedLetter(null)}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 
-                     flex items-center justify-center p-4 md:p-8"
           >
             <motion.div
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className={`
-                relative w-full max-w-2xl max-h-[80vh] overflow-y-auto
-                rounded-lg shadow-2xl p-8 md:p-12
-                ${selectedLetter.isSpecial
-                  ? 'bg-gradient-to-br from-[#F4DDD4] to-[#E8C4C4]'
-                  : 'bg-white'
-                }
-              `}
+              className="bg-white rounded-xl max-w-2xl p-8 relative"
             >
-              {/* Close Button */}
               <button
                 onClick={() => setSelectedLetter(null)}
-                className="absolute top-4 right-4 p-2 rounded-full 
-                         bg-white/80 hover:bg-white transition-colors"
+                className="absolute top-4 right-4"
               >
-                <X className="w-5 h-5 text-[#8B6F6F]" />
+                <X />
               </button>
 
-              {/* Modal Content */}
-              <div className="text-center space-y-6">
-                {/* Letter Number */}
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: 'spring' }}
-                >
-                  <span
-                    className={`
-                      text-8xl md:text-9xl opacity-20
-                      ${selectedLetter.isSpecial ? 'text-white' : 'text-[#D4A5A5]'}
-                    `}
-                    style={{ fontFamily: 'Playfair Display, serif' }}
-                  >
-                    {selectedLetter.id}
-                  </span>
-                </motion.div>
-
-                {/* Title */}
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className={`
-                    text-3xl md:text-5xl mb-8
-                    ${selectedLetter.isSpecial ? 'text-[#6B5B5B]' : 'text-[#2C2C2C]'}
-                  `}
-                  style={{ fontFamily: 'Playfair Display, serif' }}
-                >
-                  {selectedLetter.title}
-                </motion.h2>
-
-                {/* Divider */}
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ delay: 0.4 }}
-                  className="flex items-center justify-center gap-4"
-                >
-                  <div className={`w-16 h-[1px] ${selectedLetter.isSpecial ? 'bg-white/50' : 'bg-[#D4A5A5]'}`} />
-                  <span className={selectedLetter.isSpecial ? 'text-white' : 'text-[#D4A5A5]'}>✦</span>
-                  <div className={`w-16 h-[1px] ${selectedLetter.isSpecial ? 'bg-white/50' : 'bg-[#D4A5A5]'}`} />
-                </motion.div>
-
-                {/* Content */}
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className={`
-                    text-lg md:text-2xl leading-relaxed max-w-xl mx-auto
-                    ${selectedLetter.isSpecial ? 'text-[#6B5B5B]' : 'text-[#8B6F6F]'}
-                  `}
-                  style={{ fontFamily: 'Cormorant Garamond, serif' }}
-                >
-                  {selectedLetter.content}
-                </motion.p>
-
-                {/* Special Badge */}
-                {selectedLetter.isSpecial && (
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ delay: 0.7, type: 'spring' }}
-                    className="pt-8"
-                  >
-                    <div className="inline-block px-6 py-2 bg-white/40 backdrop-blur-sm rounded-full">
-                      <span className="text-sm tracking-[0.2em] text-[#8B6F6F]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                        HAPPY 20TH BIRTHDAY
-                      </span>
-                    </div>
-                  </motion.div>
-                )}
-              </div>
+              <h2 className="text-3xl mb-4">{selectedLetter.title}</h2>
+              <p>{selectedLetter.content}</p>
             </motion.div>
           </motion.div>
         )}
