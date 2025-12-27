@@ -47,28 +47,12 @@ export function MagazineCover() {
           style={{ fontFamily: 'Playfair Display, serif' }}
         >
           <span className="block text-4xl md:text-7xl lg:text-8xl text-[#2C2C2C] tracking-tight mb-4">
-            20 Years
+            20 Years Down
           </span>
           <span className="block text-3xl md:text-5xl lg:text-6xl text-[#D4A5A5] italic">
-            of Grace
+            Sab Toh Changi, Forever
           </span>
         </motion.h1>
-
-        {/* Subtitle */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 1 }}
-          className="space-y-4"
-        >
-          <div className="w-32 h-[1px] bg-[#D4A5A5] mx-auto" />
-          <p
-            className="text-lg md:text-2xl text-[#6B5B5B] tracking-wide"
-            style={{ fontFamily: 'Cormorant Garamond, serif' }}
-          >
-            The Birthday Girl
-          </p>
-        </motion.div>
 
         {/* Date Badge */}
         <motion.div
