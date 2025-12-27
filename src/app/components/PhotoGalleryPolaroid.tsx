@@ -3,34 +3,34 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const memories = [
   {
-    src: "https://images.unsplash.com/photo-1599215966323-88d801b84771?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaW5rJTIwZmxvd2VycyUyMGFlc3RoZXRpY3xlbnwxfHx8fDE3NjY1NTEwODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    caption: "Blooming beautifully",
-    rotate: -3,
+    src: "/images/memory1.jpg",
+    caption: "You & me, always",
+    rotate: -4,
   },
   {
-    src: "https://images.unsplash.com/photo-1638644074459-9067407b72a3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmllbmRzJTIwbGF1Z2hpbmclMjB0b2dldGhlcnxlbnwxfHx8fDE3NjY2MzQ3NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    caption: "Forever laughing together",
-    rotate: 2,
+    src: "/images/memory2.jpg",
+    caption: "Forever laughing",
+    rotate: 3,
   },
   {
-    src: "https://images.unsplash.com/photo-1661924280523-0ca239290d10?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdW5zZXQlMjBiZWFjaCUyMGFlc3RoZXRpY3xlbnwxfHx8fDE3NjY2NDcxNjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    caption: "Golden hour magic",
+    src: "/images/memory3.jpg",
+    caption: "Golden moments",
     rotate: -2,
   },
   {
-    src: "https://images.unsplash.com/photo-1682298919189-17ae2e2ff73a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBhZXN0aGV0aWMlMjBtb3JuaW5nfGVufDF8fHx8MTc2NjY0NzE2OXww&ixlib=rb-4.1.0&q=80&w=1080",
-    caption: "Morning conversations",
+    src: "/images/memory4.jpg",
+    caption: "Late night talks",
     rotate: 4,
   },
   {
-    src: "https://images.unsplash.com/photo-1548932134-3d7d765bece2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBhZHZlbnR1cmUlMjBtb3VudGFpbnN8ZW58MXx8fHwxNzY2NjMzMzUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    caption: "Adventures await",
-    rotate: -1,
+    src: "/images/memory5.jpg",
+    caption: "Soft chaos",
+    rotate: -3,
   },
   {
-    src: "https://images.unsplash.com/photo-1688549450664-8189b4ac4751?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaXR5JTIwbGlnaHRzJTIwbmlnaHR8ZW58MXx8fHwxNzY2NjA3MTk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    caption: "City lights, bright nights",
-    rotate: 3,
+    src: "/images/memory6.jpg",
+    caption: "My comfort human",
+    rotate: 2,
   },
 ];
 
@@ -110,12 +110,6 @@ export function PhotoGalleryPolaroid() {
         viewport={{ once: true }}
         className="text-center mt-16"
       >
-        <p
-          className="text-sm tracking-[0.2em] text-[#C9B7A8] uppercase"
-          style={{ fontFamily: 'Montserrat, sans-serif' }}
-        >
-          Replace with your own photos
-        </p>
       </motion.div>
     </section>
   );
